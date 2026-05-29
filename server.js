@@ -38,13 +38,7 @@ posts = [
 app.listen(port, () => {
     console.log(`server running and listening on port:${port}`);
 })
-/*
 
-Configuriamo gli asset statici sull’applicazione in modo che si possano visualizzare le immagini associate ad ogni post.
-Testare su postman
-
-Buon divertimento e confermate lettura come al solito :babyyoda:
-*/
 
 // risposta base del server
 app.get("/", (req,res) => {
