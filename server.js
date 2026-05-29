@@ -40,7 +40,6 @@ app.listen(port, () => {
 })
 /*
 
-
 Configuriamo gli asset statici sull’applicazione in modo che si possano visualizzare le immagini associate ad ogni post.
 Testare su postman
 
@@ -55,6 +54,13 @@ app.get("/", (req,res) => {
 // dichiaro la cartella con i file pubblici
 app.use(express.static('public'));
 
+// rotta per l'invio dell'intero array
 app.get("/bacheca", (req,res) => {
     res.json(posts)
 })
+
+// rotta per l'invio dell'immagine richiesta
+app.get("/bacheca/image/:id", (req,res) => {
+    res.send(`<img src=${posts[req.params.id].image} />`)
+})
+
