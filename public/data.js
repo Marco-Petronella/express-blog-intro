@@ -1,7 +1,3 @@
-const express = require('express')
-const app = express()
-const port = 3000
-
 posts = [
     {
         title: "Ciambellone",
@@ -34,27 +30,3 @@ posts = [
         tags: [ "torta", "cioccolato", "arancia", "dolce" ]
     }
 ]
-
-app.listen(port, () => {
-    console.log(`server running and listening on port:${port}`);
-})
-/*
-
-
-Configuriamo gli asset statici sull’applicazione in modo che si possano visualizzare le immagini associate ad ogni post.
-Testare su postman
-
-Buon divertimento e confermate lettura come al solito :babyyoda:
-*/
-
-// risposta base del server
-app.get("/", (req,res) => {
-    res.send("Server del mio blog")
-})
-
-// dichiaro la cartella con i file pubblici
-app.use(express.static('public'));
-
-app.get("/bacheca", (req,res) => {
-    res.json(posts)
-})
